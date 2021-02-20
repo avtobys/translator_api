@@ -117,7 +117,7 @@ class Translator {
         delete translator["callback" + uid];
         delete translator[uid];
         let s = document.querySelector("script[src*=callback" + uid + "]");
-        s.parentNode.removeChild(s);
+        s && s.parentNode.removeChild(s);
     }
 
     backupSave(el) { // сохраняем исходное состояние
