@@ -45,9 +45,9 @@ class Trans
             exec('cat ' . $tmpfname . ' | trans 2>/dev/null', $out, $this->code);
             if ($this->code == 0) {
                 $this->text = implode("\n", $out);
-                $this->text = preg_replace('#&[\s]*nbsp;#', '&nbsp;', $this->text);
-                $this->text = preg_replace('#&([\s]*)lt;#', '&lt;', $this->text);
-                $this->text = preg_replace('#&([\s]*)gt;#', '&gt;', $this->text);
+                $this->text = preg_replace('#&[\s]*nbsp;#i', '&nbsp;', $this->text);
+                $this->text = preg_replace('#&([\s]*)lt;#i', '&lt;', $this->text);
+                $this->text = preg_replace('#&([\s]*)gt;#i', '&gt;', $this->text);
             }
             unlink($tmpfname);
         }
