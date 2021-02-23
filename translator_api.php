@@ -48,6 +48,7 @@ class Trans
                 $this->text = preg_replace('#&[\s]*nbsp;#i', '&nbsp;', $this->text);
                 $this->text = preg_replace('#&([\s]*)lt;#i', '&lt;', $this->text);
                 $this->text = preg_replace('#&([\s]*)gt;#i', '&gt;', $this->text);
+                $this->text = preg_replace('#[-]{11,}#', $this->delimiter, $this->text);
             }
             unlink($tmpfname);
         }
